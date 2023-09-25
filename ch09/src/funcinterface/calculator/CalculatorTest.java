@@ -29,8 +29,6 @@ public class CalculatorTest {
 		int value4 = div.calculate(num1, num2);
 		System.out.println("두 수의 나누기: " + value4);
 		
-		// Calculator()호출
-
 	}
 
 }

@@ -10,6 +10,7 @@ public class StreamTest1 {
 		
 		//ArrayList에 객체 생성해서 저장함
 		List<String> list = Arrays.asList("LG", "Samsung", "현대");
+		
 		/*List<String> list = new ArrayList<>();
 		
 		list.add("LG");
