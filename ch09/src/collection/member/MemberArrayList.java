@@ -35,7 +35,7 @@ public class MemberArrayList {
 	//이미 등록된 회원번호와
 	//매개로 전달된 회원아이디를 비교해서있으면 삭제함
 	public boolean removeMember(int memberId) {
-		for(int i =0; i < arrayList.size(); i++) {
+		for(int i=0; i < arrayList.size(); i++) {
 			int abId = arrayList.get(i).getMemberid(); //이미 등록된 회원번호
 			if(abId == memberId) { //외부 아이디와 비교해서 일치하면
 				arrayList.remove(i); //member 객체를 삭제함

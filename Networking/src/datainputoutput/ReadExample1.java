@@ -16,7 +16,7 @@ public class ReadExample1 {
 				int data = is.read();
 				if(data == -1) //데이터가 없음
 					break;
-					System.out.println(data);	
+				System.out.println(data);	
 			}
 			is.close();
 		} catch (FileNotFoundException e) {

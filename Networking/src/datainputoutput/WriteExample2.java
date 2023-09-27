@@ -13,7 +13,7 @@ public class WriteExample2 {
 			os = new FileOutputStream("C:/File/test2.db");
 			
 			//배열로 데이터 생성
-			byte[] array = {10, 20, 30};
+			byte[] array = {10, 20, 30, 40, 50};
 			
 			//배열의 모든 바이트를 쓰기
 			os.write(array);
