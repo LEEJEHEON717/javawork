@@ -1,4 +1,4 @@
-package newwork.socket2;
+package EcoClient;
 
 import java.io.IOException;
 import java.io.InputStream;

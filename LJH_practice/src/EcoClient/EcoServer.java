@@ -1,13 +1,14 @@
-package newwork.socket;
+package EcoClient;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-// TCP (Transmission Control Protocol) 네트워킹
-public class ServerSample {
+public class EcoServer {
 
 	// 서버 소켓 객체 선언
 	private static ServerSocket serverSocket;
@@ -21,7 +22,7 @@ public class ServerSample {
 		startServer();
 
 		Scanner scanner = new Scanner(System.in);
-		while (true) { //항상 대기
+		while (true) {
 			String key = scanner.nextLine();
 			if (key.toLowerCase().equals("q"))
 				break;
@@ -40,7 +41,7 @@ public class ServerSample {
 			@Override
 			public void run() {
 				try {
-					serverSocket = new ServerSocket(8001);
+					serverSocket = new ServerSocket(50001);
 					System.out.println("[서버] 시작됨");
 
 					while (true) {
@@ -53,8 +54,23 @@ public class ServerSample {
 						String clientIP = isa.getHostString();
 						System.out.println("[서버] " + clientIP + "의 연결 요청을 수락함");
 						// 웹 브라우저에서 http://127.0.0.1:50001/을 입력함 - 콘솔에서 확인
+						
+						// 클라인언트가 보낸 데이터 받기(읽기)
+						InputStream is = socket.getInputStream();
+						byte[] bytes = new byte[1024]; //데이터를 저장할 배열 선언
+						int readBytes = is.read(bytes); //데이터를 읽은 바이트수
+						//데이터를 문자열로 생성 - 디코딩
+						String message = new String(bytes, 0, readBytes, "utf-8");
+						
+						//받은 데이터 보내기
+						OutputStream os = socket.getOutputStream();
+						bytes = message.getBytes("utf-8");  //인코딩
+						os.write(bytes);
+						
+						os.flush();
+						System.out.println("[서버] 받은 데이터를 다시 보냄: " + message);
 
-						socket.close();
+						socket.close(); //소켓 종료
 						System.out.println("[서버] " + clientIP + "의 연결을 끊음");
 					}
 
