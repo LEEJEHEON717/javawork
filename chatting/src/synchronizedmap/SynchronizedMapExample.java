@@ -43,6 +43,7 @@ public class SynchronizedMapExample {
 		
 		System.out.println("총 객체수: " + map.size());
 		
+		//map에 저장된 자료 전체 출력
 		Set<Integer> keys = map.keySet();
 		for(Integer key : keys)
 			System.out.println(key + ", " + map.get(key));
