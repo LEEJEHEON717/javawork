@@ -1,7 +1,12 @@
 package domain;
 
+import java.io.Serializable;
+
 //dto 클래스(자료 전달 객체), vo
-public class User {
+public class User implements Serializable{
+
+	private static final long serialVersionUID = 1111L;
+	
 	//필드
 	private String userId;
 	private String userName;
@@ -9,10 +14,10 @@ public class User {
 	private int userAge;
 	private String userEmail;
 	
-	//기본 생성자
+	//기본 생성자 생략
 	public User() {}
 	
-	//매서드(getter/setter)
+	//메서드(getter/setter)
 	public String getUserId() {
 		return userId;
 	}
