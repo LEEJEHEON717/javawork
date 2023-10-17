@@ -17,12 +17,12 @@ public class StringReadTest {
 			}*/
 			int data;
 			while((data = reader.read()) != -1) {
-				System.out.print((char)data);	
+				System.out.print((char)data);
 			}
 			
 			reader.close();
 		} catch (IOException e) {
-			e.printStackTrace();	
-		}	
+			e.printStackTrace();
+		}
 	}
 }

@@ -8,10 +8,9 @@ import java.io.OutputStream;
 public class WriteExample2 {
 
 	public static void main(String[] args) {
-		OutputStream os;
+		
 		try {
-			os = new FileOutputStream("C:/File/test2.db");
-			
+			OutputStream os = new FileOutputStream("C:/File/test2.db");
 			//배열로 데이터 생성
 			byte[] array = {10, 20, 30, 40, 50};
 			
@@ -19,12 +18,10 @@ public class WriteExample2 {
 			os.write(array);
 			
 			os.flush();
-			os.flush();		
-		}  catch (IOException e) {
+			os.close();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-
 	}
 
 }

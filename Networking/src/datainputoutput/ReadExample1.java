@@ -11,20 +11,16 @@ public class ReadExample1 {
 		// 입력 스트림 객체 생성
 		try {
 			InputStream is = new FileInputStream("C:/File/test1.db");
-			
 			while(true) {
 				int data = is.read();
 				if(data == -1) //데이터가 없음
-					break;
-				System.out.println(data);	
+					break; 
+				System.out.println((char)data);	
 			}
 			is.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		}catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

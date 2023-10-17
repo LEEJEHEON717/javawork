@@ -10,7 +10,6 @@ public class LeadLineTest {
 
 	public static void main(String[] args) {
 		
-
 		try {
 			//기반스트림
 			Reader reader = new FileReader("message.txt");
@@ -27,14 +26,9 @@ public class LeadLineTest {
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();	
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-			
 		}
-		
-		//보조 스트림에 기반 스트림 연결
-
 	}
-
 }

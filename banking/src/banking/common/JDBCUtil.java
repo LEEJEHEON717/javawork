@@ -30,14 +30,14 @@ public class JDBCUtil {
 	//db 연결 종료(삽입, 수정, 삭제)
 	public static void close(Connection conn, 
 			PreparedStatement pstmt) {
-		if(pstmt !=null) {
+		if(pstmt != null) {
 			try {
 				pstmt.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		if(conn !=null) {
+		if(conn != null) {
 			try {
 				conn.close();
 			} catch (SQLException e) {
@@ -46,8 +46,8 @@ public class JDBCUtil {
 		}
 	}
 	
-	//db 연결 종료 메서드
-	public static void close(Connection conn,
+	//db 연결 종료 메서드(조회)
+	public static void close(Connection conn, 
 			PreparedStatement pstmt, ResultSet rs) {
 		if(rs != null) {
 			try {
@@ -56,14 +56,14 @@ public class JDBCUtil {
 				e.printStackTrace();
 			}
 		}
-		if(pstmt !=null) {
+		if(pstmt != null) {
 			try {
 				pstmt.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		if(conn !=null) {
+		if(conn != null) {
 			try {
 				conn.close();
 			} catch (SQLException e) {
