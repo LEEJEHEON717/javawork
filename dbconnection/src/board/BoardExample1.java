@@ -30,12 +30,11 @@ public class BoardExample1 {
 		System.out.println();
 		System.out.println("[게시글 목록]");
 		System.out.println("-------------------------------------------------");
-		System.out.printf("%-4s%-12s%-40s \n","no", "writer", "date", "title");
+		System.out.printf("%-4s%-12s%-40s \n", "no", "writer", "date", "title");
 		System.out.println("-------------------------------------------------");
-		System.out.printf("%-4s%-12s%-40s \n",
-				"1", "today12", "2023-10-17", "가입인사 드립니다.");
-		
-		mainMenu(); //mainMenu() 메서드 호출
+		System.out.printf("%-4s%-12s%-40s \n", "1", "today12", "2023-10-17", "가입인사 드립니다.");
+
+		mainMenu(); // mainMenu() 메서드 호출
 	}
 	
 	public void mainMenu() {
