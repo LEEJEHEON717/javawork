@@ -16,6 +16,7 @@ public class BoardMain {
 	//db 연결관련 변수
 	String driverClass = "com.mysql.cj.jdbc.Driver";
 	String url = "jdbc:mysql://127.0.0.1:3306/mydb?serverTime=Asia/Seoul";
+	//String url = "jdbc:mysql://localhost:3306/mydb?serverTime=Asia/Seoul";
 	String user = "myuser";
 	String password = "pwmyuser";
 	
