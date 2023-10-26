@@ -8,7 +8,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class ComboBoxExample2 extends JFrame implements ActionListener{	
+public class ComboBoxExample2 extends JFrame implements ActionListener{
 	//필드
 	String[] currency = {"달러", "위안", "유로", "엔"};
 	JComboBox<String> comboBox;
@@ -18,7 +18,7 @@ public class ComboBoxExample2 extends JFrame implements ActionListener{
 	public ComboBoxExample2() {
 		//윈도우 객체
 		this.setTitle("목록 상자");
-		this.setSize(300,200);
+		this.setSize(300, 200);
 		this.setLocation(200, 100);
 		
 		//컴포넌트 객체 생성
@@ -34,19 +34,16 @@ public class ComboBoxExample2 extends JFrame implements ActionListener{
 		
 		//디스플레이
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);	
+		this.setVisible(true);
 	}
-
+	
 	public static void main(String[] args) {
 		new ComboBoxExample2();
-
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String currency = (String)comboBox.getSelectedItem();
-		label.setText(currency + "(을)를 선택하셨습니다.");	
-		
+		label.setText(currency + "(을)를 선택하셨습니다.");
 	}
-
 }

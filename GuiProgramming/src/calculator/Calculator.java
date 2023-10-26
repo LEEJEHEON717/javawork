@@ -12,72 +12,59 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Calculator extends JFrame {
-	// 필드
-	String[] operator = { "+", "-", "*", "/" };
+public class Calculator extends JFrame{
+	//필드
+	String[] operator = {"+", "-", "x", "÷"};
 	JComboBox<String> comboBox;
-
-	// 생성자
+	
+	//생성자
 	public Calculator() {
-		// 윈도우(프레임) 생성
+		//윈도우(프레임) 생성
 		this.setTitle("사칙연산 프로그램");
 		this.setSize(300, 120);
 		this.setLocation(200, 100);
-
-		// 패널 2개 생성 - BorderLayout
+		
+		//패널 2개 생성 - BorderLayout
 		JPanel pane1 = new JPanel();
 		JPanel pane2 = new JPanel();
-
+		
 		this.add(pane1, BorderLayout.NORTH);
 		this.add(pane2, BorderLayout.CENTER);
-
-		// 컴포넌트 객체 생성 - Flow
-		//
+		
+		//컴포넌트 객체 생성 - FlowLayout
+		//pane1에 객체 올리기
 		pane1.setLayout(new FlowLayout());
 		JTextField text1 = new JTextField(5);
-		// 콤보 박스
+		//콤보 박스
 		comboBox = new JComboBox<>(operator);
-
+		
 		JTextField text2 = new JTextField(5);
-		// 레이블
+		//레이블
 		JLabel label = new JLabel("=");
 		JTextField text3 = new JTextField(5);
-
-		// 버튼 객체
+		
+		//버튼 객체
 		pane2.setLayout(new FlowLayout());
 		JButton calcBtn = new JButton("계산");
 		JButton resetBtn = new JButton("취소");
-
-		// pane1,2에 올리기
+		
+		//pane1, 2에 올리기
 		pane1.add(text1);
 		pane1.add(comboBox);
 		pane1.add(text2);
 		pane1.add(label);
 		pane1.add(text3);
-
+		
 		pane2.add(calcBtn);
 		pane2.add(resetBtn);
-
-		// 버튼 이벤트 - 익명 객체 구현
-		// 계산 버튼 구현
-		ActionListener listener = new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int num1 = Integer.parseInt(text1.getText()); // 입력된 문자를 숫자로 변환
-				int num2 = Integer.parseInt(text2.getText());
-				int sum = num1 + num2;
-				text3.setText(String.valueOf(sum)); // 숫자를 문자형으로 변환
-			}
-		};
-		// 이벤트
-		// 계산 버튼 눌렀을때 연산 구현
+		
+		//이벤트
 		ActionListener listener1 = new ActionListener() {
-			
+			//계산 버튼 눌렀을때 연산 구현
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// if~else, switch
-				int num1 = Integer.parseInt(text1.getText()); // 입력된 문자를 숫자로 변환
+				//if~else, switch
+				int num1 = Integer.parseInt(text1.getText());
 				String op = (String)comboBox.getSelectedItem();
 				int num2 = Integer.parseInt(text2.getText());
 				
@@ -88,32 +75,32 @@ public class Calculator extends JFrame {
 				case "-":
 					result = num1 - num2;
 					text3.setText(String.valueOf(result)); break;
-				case "*":
+				case "x":
 					result = num1 * num2;
 					text3.setText(String.valueOf(result)); break;
-				case "/":
+				case "÷":
 					double result2 = (double)num1 / num2;
 					text3.setText(String.valueOf(result2)); break;
 				}
 			}
 		};
-		calcBtn.addActionListener(listener1); // 계산 실행
+		calcBtn.addActionListener(listener1);
 		
-		// 취소 버튼 구현 - 취소 버튼을 누르면 입력된 숫자가 지워지고 공백으로 초기화됨
 		ActionListener listener2 = new ActionListener() {
-			
+			//취소 버튼 눌렀을때 입력 초기화 구현
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				text1.setText(""); // text1 
-				text2.setText(""); // text2
-				text3.setText(""); // text3 내용 초기화 (계산 결과)
+				text1.setText("");
+				text2.setText("");
+				text3.setText("");
 			}
 		};
 		resetBtn.addActionListener(listener2);
-
-		// 디스플레이
+		
+		//디스플레이
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+		
 	}
-	
+
 }

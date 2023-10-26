@@ -1,4 +1,4 @@
-package dbcrud;
+package abcrud;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -29,7 +29,7 @@ public class UserInsertTest {
 			pstmt = conn.prepareStatement(sql);
 			//? 값 지정
 			pstmt.setString(1, "sky126");
-			pstmt.setString(2, "오하늘");
+			pstmt.setString(2, "최하늘");
 			pstmt.setString(3, "u12345");
 			pstmt.setInt(4, 28);
 			pstmt.setString(5, "sky123@cloud.com");

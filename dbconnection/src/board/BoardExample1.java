@@ -19,7 +19,7 @@ public class BoardExample1 {
 		try {
 			Class.forName(driverClass);
 			conn = DriverManager.getConnection(url, user, password);
-			System.out.println("db 연결 성공!!" + conn);
+			//System.out.println("db 연결 성공!!" + conn);
 		} catch (Exception e) {
 			e.printStackTrace();
 			exit();
@@ -29,16 +29,17 @@ public class BoardExample1 {
 	public void list() {
 		System.out.println();
 		System.out.println("[게시글 목록]");
-		System.out.println("-------------------------------------------------");
-		System.out.printf("%-4s%-12s%-40s \n", "no", "writer", "date", "title");
-		System.out.println("-------------------------------------------------");
-		System.out.printf("%-4s%-12s%-40s \n", "1", "today12", "2023-10-17", "가입인사 드립니다.");
-
-		mainMenu(); // mainMenu() 메서드 호출
+		System.out.println("--------------------------------------------------------");
+		System.out.printf("%-4s%-12s%-12s%-40s \n", "no", "writer", "date", "title");
+		System.out.println("--------------------------------------------------------");
+		System.out.printf("%-4s%-12s%-12s%-40s \n", 
+								"1", "today12", "202-10-17", "가입인사 드립니다.");
+		
+		mainMenu(); //mainMenu() 메서드 호출
 	}
 	
 	public void mainMenu() {
-		System.out.println("-------------------------------------------------");
+		System.out.println("--------------------------------------------------------");
 		System.out.println("1.Create | 2.Read | 3.Clear | 4.Exit");
 		System.out.print("선택: ");
 		
@@ -55,7 +56,7 @@ public class BoardExample1 {
 			exit(); break;
 		}
 	}
-
+	
 	public void create() {
 		System.out.println("create() 메서드 실행됨");
 		list();
@@ -64,25 +65,21 @@ public class BoardExample1 {
 	public void read() {
 		System.out.println("read() 메서드 실행됨");
 		list();
-		
 	}
 	
 	public void clear() {
 		System.out.println("clear() 메서드 실행됨");
 		list();
-		
 	}
 	
 	public void exit() {
 		System.out.println("*** 게시판을 종료합니다. ***");
-		System.exit(0); //즉시 종료
-		
+		System.exit(0);   //즉시 종료
 	}
 
 	public static void main(String[] args) {
 		BoardExample1 board1 = new BoardExample1();
 		board1.list();
-
 	}
 
 }

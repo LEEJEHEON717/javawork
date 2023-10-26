@@ -15,6 +15,8 @@ public class Board implements Serializable{
 	private String bwriter;
 	private Date bdate;
 	
+	public Board() {}
+	
 	public int getBno() {
 		return bno;
 	}

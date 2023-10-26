@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class ComboBoxExample extends JFrame{
-	
+
 	//생성자
 	public ComboBoxExample() {
 		//프레임
 		this.setTitle("목록 상자");
-		this.setSize(300,200);
+		this.setSize(300, 200);
 		this.setLocation(200, 100);
 		
 		//컴포넌트 객체 생성
@@ -32,19 +32,18 @@ public class ComboBoxExample extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String currency = (String)comboBox.getSelectedItem();
-				label.setText(currency + "(을)를 선택하셨습니다.");	
+				label.setText(currency + "를 선택하셨습니다.");
 			}
 		};
 		comboBox.addActionListener(listener);
 		
 		//디스플레이
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);	
+		this.setVisible(true);
 	}
-
+	
 	public static void main(String[] args) {
 		new ComboBoxExample();
-
 	}
 
 }
